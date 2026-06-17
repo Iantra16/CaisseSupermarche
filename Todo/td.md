@@ -1,16 +1,3 @@
-Listed directory Todo
-Viewed todo:1-216
-Ran command: `pdftotext -layout "/home/iantra/Documents/My_Docs/S4/SI/CaisseSupermarche/Todo/ITUNIVERSITY – TD SI-IHM – CODE IGNITER PROMO 18 – Juin 2026.pdf" -`
-Listed directory CaisseSupermarche
-Listed directory Controllers
-Viewed CaisseController.php:1-41
-Listed directory Views
-Listed directory caisse
-
-Voici la liste des tâches (Todo List) à réaliser à partir des **Travaux à faire 2**, structurée selon les exigences du sujet (PDF) et adaptée pour une implémentation propre sous CodeIgniter 4 :
-
----
-
 ### 📋 Travaux à faire 2 — Écran de choix de caisse (45 min)
 
 #### **2.1. Écran d'accueil - Choix de caisse (20 min)**
