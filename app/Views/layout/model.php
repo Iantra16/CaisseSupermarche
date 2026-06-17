@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Caisse Supermarché</title>
-    <link rel="icon" type="image/x-icon" href="<?= base_url('assets/favicon.ico') ?>" />
     <link href="<?= base_url('css/styles.css') ?>" rel="stylesheet" />
 </head>
 <body>

@@ -21,10 +21,20 @@ class CaisseController extends BaseController
         if (!$caisseId) {
             return redirect()->back()->with('error', 'Veuillez sélectionner une caisse.');
         }
+
         $caisseModel = new CaisseModel();
         $caisse = $caisseModel->getCaisseById($caisseId);
-        session()->set('caisse_choisit', $caisse);
 
-        return view('caisse/accueil', ['caisse' => $caisse]);
+        if (!$caisse) {
+            return redirect()->back()->with('error', 'Caisse introuvable.');
+        }
+
+        session()->set('caisse', [
+            'id'      => $caisse['id'],
+            'numero'  => $caisse['numero'],
+            'libelle' => $caisse['libelle'],
+        ]);
+
+        return redirect()->to('/achat');  // ✅ route correcte
     }
 }

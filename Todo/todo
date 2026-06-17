@@ -23,31 +23,6 @@
 
 ---
 
-## ✅ Travaux à faire 1 — Initialiser CodeIgniter (5 min)
-
-- [ ] Télécharger/extraire CodeIgniter 4
-- [ ] Configurer `app/Config/Database.php` pour pointer vers SQLite
-  ```php
-  public array $default = [
-      'driver'   => 'SQLite3',
-      'database' => WRITEPATH . 'database/supermarche.db',
-  ];
-  ```
-- [ ] Activer l'extension `pdo_sqlite` dans `php.ini`
-- [ ] Vérifier que `php spark serve` fonctionne
-
----
-
-## ✅ Travaux à faire 1 — Créer le template (25 min)
-
-- [ ] Créer la vue `app/Views/layout/base.php` (structure HTML commune)
-  - Header avec le nom de la caisse active (depuis la session)
-  - Menu de navigation
-  - Zone de contenu (`<?= $this->renderSection('content') ?>`)
-- [ ] Créer le fichier CSS dans `public/css/style.css`
-- [ ] Vérifier le rendu du template vide
-
----
 
 ## ✅ Travaux à faire 2 — Écran de choix de caisse (20 + 25 min)
 
@@ -65,8 +40,6 @@
   $routes->get('/', 'CaisseController::index');
   $routes->post('/caisse/choisir', 'CaisseController::choisir');
   ```
-
-
 
 ### 2.2 Session – afficher la caisse choisie
 - [ ] Activer la session dans `app/Config/Session.php`
