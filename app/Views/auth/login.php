@@ -19,12 +19,12 @@
 
                     <div class="mb-3">
                         <label class="form-label fw-bold">Login</label>
-                        <input type="text" name="login" class="form-control" required autofocus>
+                        <input type="text" name="login" class="form-control" value="admin" required autofocus>
                     </div>
 
                     <div class="mb-4">
                         <label class="form-label fw-bold">Mot de passe</label>
-                        <input type="password" name="password" class="form-control" required>
+                        <input type="password" name="password" class="form-control" value="admin" required>
                     </div>
 
                     <div class="d-grid">

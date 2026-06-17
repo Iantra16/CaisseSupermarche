@@ -10,6 +10,9 @@ class CaisseController extends BaseController
 {
     public function index()
     {
+        // Libérer la caisse en cours quand on revient à l'accueil
+        session()->remove(['caisse', 'achat_id']);
+
         $caisseModel = new CaisseModel();
         $caisses = $caisseModel->getAllCaisses();
         return view('caisse/choix', ['caisses' => $caisses]);
