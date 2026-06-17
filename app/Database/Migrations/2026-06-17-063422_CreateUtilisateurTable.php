@@ -12,6 +12,7 @@ class CreateUtilisateurTable extends Migration
             'id'       => ['type' => 'INTEGER', 'auto_increment' => true],
             'login'    => ['type' => 'VARCHAR', 'constraint' => 100, 'null' => false, 'unique' => true],
             'password' => ['type' => 'VARCHAR', 'constraint' => 255, 'null' => false],
+            'role'     => ['type' => 'VARCHAR', 'constraint' => 20, 'null' => false, 'default' => 'caissier'],
         ]);
         $this->forge->addPrimaryKey('id');
         $this->forge->createTable('utilisateur');

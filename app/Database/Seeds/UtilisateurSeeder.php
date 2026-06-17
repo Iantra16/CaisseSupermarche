@@ -9,7 +9,11 @@ class UtilisateurSeeder extends Seeder
     public function run()
     {
         $data = [
-            ['login' => 'admin', 'password' => 'admin'],
+            [
+                'login'    => 'admin',
+                'password' => password_hash('admin', PASSWORD_DEFAULT),
+                'role'     => 'admin',
+            ],
         ];
         $this->db->table('utilisateur')->insertBatch($data);
     }
