@@ -69,4 +69,28 @@ class AchatModel extends Model
             ->where('id', $achatId)
             ->update(['statut' => 'cloture']);
     }
+
+    // Liste tous les achats avec infos caisse + total + nb lignes
+    public function getListeAchats($statut = null)
+    {
+        $builder = $this->db->table('achat a')
+            ->select([
+                'a.id',
+                'a.statut',
+                'a.date_achat',
+                'c.libelle AS caisse_libelle',
+                'COUNT(al.id)   AS nb_lignes',
+                'COALESCE(SUM(al.montant), 0) AS total',
+            ])
+            ->join('caisse c', 'c.id = a.caisse_id', 'left')
+            ->join('achat_ligne al', 'al.achat_id = a.id', 'left')
+            ->groupBy('a.id')
+            ->orderBy('a.id', 'DESC');
+
+        if ($statut) {
+            $builder->where('a.statut', $statut);
+        }
+
+        return $builder->get()->getResultArray();
+    }
 }

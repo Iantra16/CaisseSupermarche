@@ -43,7 +43,7 @@
                 <div class="col-md-3">
                     <div class="d-grid">
                         <button type="submit" class="btn btn-success btn-lg">
-                            Valider
+                            ✅ Valider
                         </button>
                     </div>
                 </div>

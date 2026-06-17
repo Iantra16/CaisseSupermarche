@@ -20,13 +20,14 @@ class AchatController extends BaseController
 
         $caisseId = session('caisse')['id'];
 
-        // Récupérer ou créer l'achat en cours
+        // Récupérer ou créer l'achat en cours (et mettre à jour la session)
         $achat = $achatModel->getAchatEnCours($caisseId);
+        session()->set('achat_id', $achat['id']);
 
-        // Récupérer les lignes de l'achat en cours
+        // Récupérer les lignes de l'achat en cours avec jointure sur produit
         $lignes = $achatModel->getLignes($achat['id']);
 
-        return view('caisse/achat', [
+        return view('achat/index', [
             'produits' => $produitModel->findAll(),
             'lignes'   => $lignes,
         ]);
@@ -50,7 +51,9 @@ class AchatController extends BaseController
 
         $produit  = $produitModel->find($produitId);
         $caisseId = session('caisse')['id'];
-        $achat    = $achatModel->getAchatEnCours($caisseId);
+
+        // Utiliser l'achat_id en session (créé au moment du choix de caisse)
+        $achat = $achatModel->getAchatEnCours($caisseId);
 
         $achatModel->ajouterLigne(
             $achat['id'],
@@ -72,8 +75,26 @@ class AchatController extends BaseController
         $caisseId   = session('caisse')['id'];
         $achat      = $achatModel->getAchatEnCours($caisseId);
 
+        // Clôturer l'achat en cours
         $achatModel->cloturerAchat($achat['id']);
 
-        return redirect()->to('/achat')->with('success', 'Achat clôturé avec succès.');
+        // ✅ Créer automatiquement un nouvel achat pour le prochain client
+        $nouvelAchat = $achatModel->getAchatEnCours($caisseId);
+        session()->set('achat_id', $nouvelAchat['id']);
+
+        return redirect()->to('/achat')->with('success', 'Achat clôturé. Nouveau client prêt.');
+    }
+
+    public function liste()
+    {
+        $achatModel = new AchatModel();
+        $filtre     = $this->request->getGet('statut'); // 'en_cours' | 'cloture' | null
+
+        $achats = $achatModel->getListeAchats($filtre);
+
+        return view('achat/liste', [
+            'achats' => $achats,
+            'filtre' => $filtre,
+        ]);
     }
 }

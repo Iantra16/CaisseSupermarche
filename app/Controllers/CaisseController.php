@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\CaisseModel;
+use App\Models\AchatModel;
 
 class CaisseController extends BaseController
 {
@@ -29,12 +30,20 @@ class CaisseController extends BaseController
             return redirect()->back()->with('error', 'Caisse introuvable.');
         }
 
+        // Enregistrer la caisse en session
         session()->set('caisse', [
             'id'      => $caisse['id'],
             'numero'  => $caisse['numero'],
             'libelle' => $caisse['libelle'],
         ]);
 
-        return redirect()->to('/achat');  // ✅ route correcte
+        // ✅ Créer (ou récupérer) l'achat en cours dès le choix de caisse
+        $achatModel = new AchatModel();
+        $achat = $achatModel->getAchatEnCours($caisse['id']);
+
+        // Stocker l'achat_id en session
+        session()->set('achat_id', $achat['id']);
+
+        return redirect()->to('/achat')->with('success', 'Caisse ' . esc($caisse['libelle']) . ' sélectionnée.');
     }
 }

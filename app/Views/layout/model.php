@@ -26,11 +26,19 @@
                     🏠 Accueil
                 </a>
                 <?php if (session('caisse')): ?>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3 <?= (current_url() == site_url('achat')) ? 'active' : '' ?>"
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 <?= str_contains(current_url(), '/achat') && !str_contains(current_url(), '/achats') ? 'active' : '' ?>"
                    href="<?= site_url('achat') ?>">
                     🧾 Saisie des achats
                 </a>
                 <?php endif; ?>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 <?= str_contains(current_url(), '/achats') ? 'active' : '' ?>"
+                   href="<?= site_url('achats') ?>">
+                    📋 Historique des achats
+                </a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3 <?= str_contains(current_url(), '/produits') ? 'active' : '' ?>"
+                   href="<?= site_url('produits') ?>">
+                    📦 Gestion des produits
+                </a>
                 <?php if (session('utilisateur')): ?>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3 text-danger"
                    href="<?= site_url('logout') ?>">
