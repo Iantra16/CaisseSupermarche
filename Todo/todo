@@ -84,15 +84,16 @@
 
 ### 3.1 Étape 1 – Formulaire de saisie (60 min)
 - [ ] Créer le contrôleur `app/Controllers/AchatController.php`
+- [ ] `php spark make:controller AchatController` 
   - Méthode `index()` → affiche le formulaire + liste des lignes
   - Méthode `ajouterLigne()` → traite le POST, insère une ligne
-- [ ] Créer le modèle `app/Models/ProduitModel.php`
+- [x] Créer le modèle `app/Models/ProduitModel.php`
   - Méthode `getAll()` → liste tous les produits
   - Méthode `getById($id)` → retourne un produit par son id
-- [ ] Créer le modèle `app/Models/AchatModel.php`
+- [x] Créer le modèle `app/Models/AchatModel.php`
   - Méthode `getAchatEnCours($caisse_id)` → retourne l'achat en cours ou en crée un
   - Méthode `ajouterLigne($achat_id, $produit_id, $quantite)` → insère dans `achat_ligne`
-- [ ] Créer la vue `app/Views/achat/index.php`
+- [x] Créer la vue `app/Views/achat/index.php`
   - Formulaire avec :
     - `<select>` Produit (chargé depuis `produit`)
     - `<input>` Quantité
