@@ -3,13 +3,12 @@
 <?= $this->section('content') ?>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h4 class="mb-0">📦 Gestion des Produits</h4>
+    <h4 class="mb-0">Gestion des Produits</h4>
     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalAjouter">
-        ➕ Nouveau Produit
+        Nouveau Produit
     </button>
 </div>
 
-<!-- Tableau des produits -->
 <div class="card shadow-sm">
     <div class="card-body p-0">
         <?php if (empty($produits)): ?>
@@ -43,7 +42,6 @@
                                 <?php endif; ?>
                             </td>
                             <td class="text-center">
-                                <!-- Bouton Modifier -->
                                 <button class="btn btn-sm btn-outline-primary me-1"
                                         data-bs-toggle="modal"
                                         data-bs-target="#modalModifier"
@@ -51,13 +49,12 @@
                                         data-designation="<?= esc($p['designation']) ?>"
                                         data-prix="<?= $p['prix'] ?>"
                                         data-stock="<?= $p['quantite_stock'] ?>">
-                                    ✏️ Modifier
+                                    Modifier
                                 </button>
-                                <!-- Bouton Supprimer -->
                                 <a href="<?= site_url('produits/supprimer/' . $p['id']) ?>"
                                    class="btn btn-sm btn-outline-danger"
                                    onclick="return confirm('Supprimer ce produit ?')">
-                                    🗑️ Supprimer
+                                    Supprimer
                                 </a>
                             </td>
                         </tr>
@@ -68,14 +65,14 @@
     </div>
 </div>
 
-<!-- Modal : Ajouter un produit -->
+<!-- Modal : Ajouter -->
 <div class="modal fade" id="modalAjouter" tabindex="-1" aria-labelledby="modalAjouterLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <form action="<?= site_url('produits/creer') ?>" method="post">
                 <?= csrf_field() ?>
                 <div class="modal-header bg-primary text-white">
-                    <h5 class="modal-title" id="modalAjouterLabel">➕ Ajouter un produit</h5>
+                    <h5 class="modal-title" id="modalAjouterLabel">Ajouter un produit</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -85,7 +82,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label fw-bold">Prix unitaire (Ar)</label>
-                        <input type="number" name="prix" class="form-control" required min="0" step="0.01" placeholder="Ex: 12000" />
+                        <input type="number" name="prix" class="form-control" required min="0" step="0.01" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label fw-bold">Quantité en stock</label>
@@ -101,14 +98,14 @@
     </div>
 </div>
 
-<!-- Modal : Modifier un produit -->
+<!-- Modal : Modifier -->
 <div class="modal fade" id="modalModifier" tabindex="-1" aria-labelledby="modalModifierLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <form id="formModifier" action="" method="post">
                 <?= csrf_field() ?>
                 <div class="modal-header bg-warning text-dark">
-                    <h5 class="modal-title" id="modalModifierLabel">✏️ Modifier le produit</h5>
+                    <h5 class="modal-title" id="modalModifierLabel">Modifier le produit</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -135,10 +132,9 @@
 </div>
 
 <script>
-// Pré-remplir le modal Modifier
 document.getElementById('modalModifier').addEventListener('show.bs.modal', function (event) {
-    const btn  = event.relatedTarget;
-    const id   = btn.getAttribute('data-id');
+    const btn = event.relatedTarget;
+    const id  = btn.getAttribute('data-id');
     document.getElementById('formModifier').action = '<?= site_url('produits/modifier/') ?>' + id;
     document.getElementById('edit_designation').value = btn.getAttribute('data-designation');
     document.getElementById('edit_prix').value         = btn.getAttribute('data-prix');

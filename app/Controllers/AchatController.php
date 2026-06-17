@@ -52,7 +52,11 @@ class AchatController extends BaseController
         $produit  = $produitModel->find($produitId);
         $caisseId = session('caisse')['id'];
 
-        // Utiliser l'achat_id en session (créé au moment du choix de caisse)
+        // Vérifier le stock disponible
+        if ($produit['quantite_stock'] < $quantite) {
+            return redirect()->back()->with('error', 'Stock insuffisant (disponible : ' . $produit['quantite_stock'] . ').');
+        }
+
         $achat = $achatModel->getAchatEnCours($caisseId);
 
         $achatModel->ajouterLigne(
@@ -61,6 +65,11 @@ class AchatController extends BaseController
             $quantite,
             $produit['prix']
         );
+
+        // Décrémenter le stock du produit
+        $produitModel->update($produitId, [
+            'quantite_stock' => $produit['quantite_stock'] - $quantite,
+        ]);
 
         return redirect()->to('/achat')->with('success', 'Produit ajouté.');
     }
@@ -75,10 +84,8 @@ class AchatController extends BaseController
         $caisseId   = session('caisse')['id'];
         $achat      = $achatModel->getAchatEnCours($caisseId);
 
-        // Clôturer l'achat en cours
         $achatModel->cloturerAchat($achat['id']);
 
-        // ✅ Créer automatiquement un nouvel achat pour le prochain client
         $nouvelAchat = $achatModel->getAchatEnCours($caisseId);
         session()->set('achat_id', $nouvelAchat['id']);
 

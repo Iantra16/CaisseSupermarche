@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<h4 class="mb-4">🧾 Saisie des Achats</h4>
+<h4 class="mb-4">Saisie des Achats</h4>
 
 <!-- Formulaire ajout produit -->
 <div class="card shadow-sm mb-4">
@@ -21,7 +21,7 @@
                         <option value="" disabled selected>— Choisir un produit —</option>
                         <?php foreach ($produits as $produit): ?>
                             <option value="<?= $produit['id'] ?>" data-prix="<?= $produit['prix'] ?>">
-                                <?= esc($produit['designation']) ?> — <?= number_format($produit['prix'], 0, ',', ' ') ?> Ar
+                                <?= esc($produit['designation']) ?> — <?= number_format($produit['prix'], 0, ',', ' ') ?> Ar (stock: <?= $produit['quantite_stock'] ?>)
                             </option>
                         <?php endforeach; ?>
                     </select>
@@ -43,7 +43,7 @@
                 <div class="col-md-3">
                     <div class="d-grid">
                         <button type="submit" class="btn btn-success btn-lg">
-                            ✅ Valider
+                            Valider
                         </button>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
             <a href="<?= site_url('achat/cloturer') ?>"
                class="btn btn-danger btn-sm"
                onclick="return confirm('Confirmer la clôture de cet achat ?')">
-                🔒 Clôturer l'achat
+                Cloturer l'achat
             </a>
         <?php endif; ?>
     </div>

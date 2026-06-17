@@ -12,7 +12,7 @@
         <!-- Sidebar -->
         <div class="border-end bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading border-bottom bg-light">
-                🛒 Supermarché
+                Supermarché
                 <?php if (session('caisse')): ?>
                     <br>
                     <small class="text-muted fs-6">
@@ -23,26 +23,26 @@
             <div class="list-group list-group-flush">
                 <a class="list-group-item list-group-item-action list-group-item-light p-3 <?= (current_url() == site_url('/')) ? 'active' : '' ?>"
                    href="<?= site_url('/') ?>">
-                    🏠 Accueil
+                    Accueil
                 </a>
                 <?php if (session('caisse')): ?>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3 <?= str_contains(current_url(), '/achat') && !str_contains(current_url(), '/achats') ? 'active' : '' ?>"
                    href="<?= site_url('achat') ?>">
-                    🧾 Saisie des achats
+                    Saisie des achats
                 </a>
                 <?php endif; ?>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3 <?= str_contains(current_url(), '/achats') ? 'active' : '' ?>"
                    href="<?= site_url('achats') ?>">
-                    📋 Historique des achats
+                    Historique des achats
                 </a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3 <?= str_contains(current_url(), '/produits') ? 'active' : '' ?>"
                    href="<?= site_url('produits') ?>">
-                    📦 Gestion des produits
+                    Gestion des produits
                 </a>
                 <?php if (session('utilisateur')): ?>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3 text-danger"
                    href="<?= site_url('logout') ?>">
-                    🚪 Déconnexion
+                    Deconnexion
                 </a>
                 <?php endif; ?>
             </div>
@@ -55,25 +55,25 @@
             <!-- Barre de navigation top -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                 <div class="container-fluid">
-                    <button class="btn btn-primary" id="sidebarToggle">☰ Menu</button>
+                    <button class="btn btn-primary" id="sidebarToggle">Menu</button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                             <?php if (session('caisse')): ?>
                             <li class="nav-item">
                                 <span class="nav-link fw-bold text-success">
-                                    🖥️ <?= esc(session('caisse')['numero']) ?> — <?= esc(session('caisse')['libelle']) ?>
+                                    <?= esc(session('caisse')['numero']) ?> — <?= esc(session('caisse')['libelle']) ?>
                                 </span>
                             </li>
                             <?php endif; ?>
                             <?php if (session('utilisateur')): ?>
                             <li class="nav-item">
                                 <span class="nav-link text-muted">
-                                    👤 <?= esc(session('utilisateur')['login']) ?>
+                                    <?= esc(session('utilisateur')['login']) ?>
                                 </span>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-danger" href="<?= site_url('logout') ?>">Déconnexion</a>
+                                <a class="nav-link text-danger" href="<?= site_url('logout') ?>">Deconnexion</a>
                             </li>
                             <?php endif; ?>
                         </ul>
