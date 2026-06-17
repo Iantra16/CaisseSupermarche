@@ -10,4 +10,14 @@ class CaisseModel extends Model
     protected $primaryKey = 'id';
     protected $allowedFields = ['numero', 'libelle'];
     protected $useTimestamps = false;
+
+    public function getAllCaisses()
+    {
+        return $this->findAll();
+    }
+
+    public function getCaisseById($id)
+    {
+        return $this->find($id);
+    }
 }

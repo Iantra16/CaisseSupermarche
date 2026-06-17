@@ -66,33 +66,7 @@
   $routes->post('/caisse/choisir', 'CaisseController::choisir');
   ```
 
-### Base:
-``` bash
-php spark make:migration CreateUtilisateurTable
-php spark make:migration CreateCaisseTable
-php spark make:migration CreateProduitTable
-php spark make:migration CreateAchatTable
-php spark make:migration CreateAchatLigneTable
 
-php spark make:seeder UtilisateurSeeder
-php spark make:seeder CaisseSeeder
-php spark make:seeder ProduitSeeder
-php spark make:seeder BaseSeeder
-
-
-php spark make:model UtilisateurModel
-php spark make:model CaisseModel
-php spark make:model ProduitModel
-php spark make:model AchatModel
-php spark make:model AchatLigneModel
-
-
-# Migrer
-php spark migrate
-
-# Seeder
-php spark db:seed BaseSeeder
-```
 
 ### 2.2 Session – afficher la caisse choisie
 - [ ] Activer la session dans `app/Config/Session.php`
@@ -238,3 +212,32 @@ writable/
 6. Formulaire ajout produit
 7. Tableau des lignes + total
 8. Clôture d'achat
+
+
+### Base:
+``` bash
+php spark make:migration CreateUtilisateurTable
+php spark make:migration CreateCaisseTable
+php spark make:migration CreateProduitTable
+php spark make:migration CreateAchatTable
+php spark make:migration CreateAchatLigneTable
+
+php spark make:seeder UtilisateurSeeder
+php spark make:seeder CaisseSeeder
+php spark make:seeder ProduitSeeder
+php spark make:seeder BaseSeeder
+
+
+php spark make:model UtilisateurModel
+php spark make:model CaisseModel
+php spark make:model ProduitModel
+php spark make:model AchatModel
+php spark make:model AchatLigneModel
+
+
+# Migrer
+php spark migrate
+
+# Seeder
+php spark db:seed BaseSeeder
+```
