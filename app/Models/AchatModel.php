@@ -21,26 +21,52 @@ class AchatModel extends Model
         return $this->where('id', $id)->first();
     }
 
-    public function getAchatEnCours($caisse_id)
+    // Retourne l'achat en cours, ou en crée un nouveau
+    public function getAchatEnCours($caisseId)
     {
-        return $this->where('caisse_id', $caisse_id)
-                    ->where('statut', 'en_cours')
-                    ->first();
+        $achat = $this->where('caisse_id', $caisseId)
+                      ->where('statut', 'en_cours')
+                      ->first();
+
+        if (!$achat) {
+            $id = $this->insert([
+                'caisse_id' => $caisseId,
+                'statut'    => 'en_cours',
+            ]);
+            $achat = $this->find($id);
+        }
+
+        return $achat;
     }
 
-    public function getLignes($achat_id)
+    // Retourne les lignes d'un achat avec le nom du produit
+    public function getLignes($achatId)
     {
-        $ligneModel = new AchatLigneModel();
-        return $ligneModel->where('achat_id', $achat_id)->findAll();
+        return $this->db->table('achat_ligne al')
+            ->select('p.designation, al.prix_unitaire, al.quantite, al.montant')
+            ->join('produit p', 'p.id = al.produit_id')
+            ->where('al.achat_id', $achatId)
+            ->get()
+            ->getResultArray();
     }
 
-    public function ajouterLigne($achat_id, $produit_id, $quantite)
+    // Insère une ligne dans achat_ligne
+    public function ajouterLigne($achatId, $produitId, $quantite, $prixUnitaire)
     {
-        $ligneModel = new AchatLigneModel();
-        return $ligneModel->insert([
-            'achat_id'   => $achat_id,
-            'produit_id' => $produit_id,
-            'quantite'   => $quantite,
+        return $this->db->table('achat_ligne')->insert([
+            'achat_id'      => $achatId,
+            'produit_id'    => $produitId,
+            'quantite'      => $quantite,
+            'prix_unitaire' => $prixUnitaire,
+            'montant'       => $quantite * $prixUnitaire,
         ]);
+    }
+
+    // Clôture un achat
+    public function cloturerAchat($achatId)
+    {
+        return $this->db->table('achat')
+            ->where('id', $achatId)
+            ->update(['statut' => 'cloture']);
     }
 }
