@@ -12,6 +12,8 @@ class CaisseSeeder extends Seeder
             ['numero' => 'C01', 'libelle' => 'Caisse 1'],
             ['numero' => 'C02', 'libelle' => 'Caisse 2'],
         ];
+        $this->db->table('caisse')->truncate();
         $this->db->table('caisse')->insertBatch($data);
+
     }
 }

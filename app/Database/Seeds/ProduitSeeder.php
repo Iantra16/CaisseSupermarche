@@ -15,6 +15,8 @@ class ProduitSeeder extends Seeder
             ['designation' => 'Sucre',   'prix' => 600,  'quantite_stock' => 60],
             ['designation' => 'Huile',   'prix' => 1500, 'quantite_stock' => 25],
         ];
+        $this->db->table('produit')->truncate();
         $this->db->table('produit')->insertBatch($data);
+
     }
 }

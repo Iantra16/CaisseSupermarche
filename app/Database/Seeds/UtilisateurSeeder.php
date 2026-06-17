@@ -15,6 +15,8 @@ class UtilisateurSeeder extends Seeder
                 'role'     => 'admin',
             ],
         ];
+        $this->db->table('utilisateur')->truncate();
         $this->db->table('utilisateur')->insertBatch($data);
+
     }
 }
