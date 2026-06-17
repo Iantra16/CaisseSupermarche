@@ -1,0 +1,453 @@
+ERROR - 2026-04-15 09:28:29 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/BaseModel.php(676): CodeIgniter\Model->doFindAll()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/app/Controllers/Etudiant.php(12): CodeIgniter\BaseModel->findAll()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(951): App\Controllers\Etudiant->index()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/rewrite.php(44): require_once('...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/BaseModel.php(676): CodeIgniter\Model->doFindAll()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/app/Controllers/Etudiant.php(12): CodeIgniter\BaseModel->findAll()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(951): App\Controllers\Etudiant->index()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/rewrite.php(44): require_once('...')
+#13 {main}
+CRITICAL - 2026-04-15 09:28:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Etudiant.php(12): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Etudiant->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/public/index.php')
+ERROR - 2026-04-15 09:28:30 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/BaseModel.php(676): CodeIgniter\Model->doFindAll()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/app/Controllers/Etudiant.php(12): CodeIgniter\BaseModel->findAll()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(951): App\Controllers\Etudiant->index()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/rewrite.php(44): require_once('...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/BaseModel.php(676): CodeIgniter\Model->doFindAll()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/app/Controllers/Etudiant.php(12): CodeIgniter\BaseModel->findAll()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(951): App\Controllers\Etudiant->index()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/rewrite.php(44): require_once('...')
+#13 {main}
+CRITICAL - 2026-04-15 09:28:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Etudiant.php(12): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Etudiant->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/public/index.php')
+ERROR - 2026-04-15 09:28:45 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/BaseModel.php(676): CodeIgniter\Model->doFindAll()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/app/Controllers/Etudiant.php(12): CodeIgniter\BaseModel->findAll()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(951): App\Controllers\Etudiant->index()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/rewrite.php(44): require_once('...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/BaseModel.php(676): CodeIgniter\Model->doFindAll()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/app/Controllers/Etudiant.php(12): CodeIgniter\BaseModel->findAll()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(951): App\Controllers\Etudiant->index()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/rewrite.php(44): require_once('...')
+#13 {main}
+CRITICAL - 2026-04-15 09:28:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll()
+ 5 APPPATH/Controllers/Etudiant.php(12): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Etudiant->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/public/index.php')
+ERROR - 2026-04-15 09:39:57 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+ERROR - 2026-04-15 09:51:05 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+ERROR - 2026-04-15 09:52:05 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+ERROR - 2026-04-15 09:55:57 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+ERROR - 2026-04-15 10:05:18 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+ERROR - 2026-04-15 10:13:03 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+ERROR - 2026-04-15 10:16:41 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+ERROR - 2026-04-15 11:36:39 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#14 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query()
+#3 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked()
+#9 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#10 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#11 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/system/Boot.php(166): CodeIgniter\Boot::runCommand()
+#13 /home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/spark(87): CodeIgniter\Boot::bootSpark()
+#14 {main}
+CRITICAL - 2026-04-15 17:32:43 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: etudiant]
+in APPPATH/Views/etudiant/index.php on line 26.
+ 1 APPPATH/Views/etudiant/index.php(26): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(240): include('/home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/app/Views/etudiant/index.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Etudiant.php(13): view()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Etudiant->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/moon/Documents/Study/S4/Mr Rojo/Sys information/codeigniter4/public/index.php')
