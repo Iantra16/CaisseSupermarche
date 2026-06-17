@@ -29,7 +29,7 @@ class Database extends Config
         'hostname'     => '',
         'username'     => '',
         'password'     => '',
-        'database'     => WRITEPATH.'marcher.db',
+        'database'     => WRITEPATH.'supermarche.db',
         'DBDriver'     => 'SQLite3',
         'DBPrefix'     => '',
         'pConnect'     => false,
