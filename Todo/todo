@@ -1,0 +1,212 @@
+# TODO – Caisse Supermarché (CodeIgniter + SQLite)
+> ITUNIVERSITY – TD SI-IHM – PROMO 18 – Juin 2026
+
+---
+
+## ✅ Travaux à faire 1 — Base de données (30 min)
+
+### 1.1 Créer le fichier SQLite
+- [ ] Créer le dossier `writable/database/` s'il n'existe pas
+- [ ] Créer le fichier `supermarche.db` dans ce dossier
+
+### 1.2 Créer les tables
+- [ ] Table `utilisateur` (id, login, password)
+- [ ] Table `caisse` (id, numero, libelle)
+- [ ] Table `produit` (id, designation, prix, quantite_stock)
+- [ ] Table `achat` (id, caisse_id FK, date_achat, statut)
+- [ ] Table `achat_ligne` (id, achat_id FK, produit_id FK, quantite, prix_unitaire, montant)
+
+### 1.3 Insérer les données initiales
+- [ ] Insérer 2 caisses (C01, C02)
+- [ ] Insérer 5 produits (Biscuit, Pain, Lait, Sucre, Huile)
+- [ ] Insérer 1 utilisateur par défaut (admin / admin)
+
+---
+
+## ✅ Travaux à faire 1 — Initialiser CodeIgniter (5 min)
+
+- [ ] Télécharger/extraire CodeIgniter 4
+- [ ] Configurer `app/Config/Database.php` pour pointer vers SQLite
+  ```php
+  public array $default = [
+      'driver'   => 'SQLite3',
+      'database' => WRITEPATH . 'database/supermarche.db',
+  ];
+  ```
+- [ ] Activer l'extension `pdo_sqlite` dans `php.ini`
+- [ ] Vérifier que `php spark serve` fonctionne
+
+---
+
+## ✅ Travaux à faire 1 — Créer le template (25 min)
+
+- [ ] Créer la vue `app/Views/layout/base.php` (structure HTML commune)
+  - Header avec le nom de la caisse active (depuis la session)
+  - Menu de navigation
+  - Zone de contenu (`<?= $this->renderSection('content') ?>`)
+- [ ] Créer le fichier CSS dans `public/css/style.css`
+- [ ] Vérifier le rendu du template vide
+
+---
+
+## ✅ Travaux à faire 2 — Écran de choix de caisse (20 + 25 min)
+
+### 2.1 Page d'accueil – choix de caisse
+- [ ] Créer le contrôleur `app/Controllers/CaisseController.php`
+  - Méthode `index()` → affiche le formulaire de choix
+  - Méthode `choisir()` → traite le POST, stocke en session
+- [ ] Créer la vue `app/Views/caisse/choisir.php`
+  - Liste déroulante (`<select>`) avec toutes les caisses depuis la BDD
+  - Bouton "Valider"
+- [ ] Créer le modèle `app/Models/CaisseModel.php`
+  - Méthode `getAll()` → retourne toutes les caisses
+- [ ] Déclarer la route dans `app/Config/Routes.php`
+  ```php
+  $routes->get('/', 'CaisseController::index');
+  $routes->post('/caisse/choisir', 'CaisseController::choisir');
+  ```
+
+### 2.2 Session – afficher la caisse choisie
+- [ ] Activer la session dans `app/Config/Session.php`
+- [ ] Dans `CaisseController::choisir()` :
+  - Récupérer la caisse choisie
+  - Stocker dans la session : `session()->set('caisse', $caisse)`
+  - Rediriger vers la page des achats
+- [ ] Dans le template `base.php` :
+  - Afficher le numéro/libellé de la caisse active en haut du menu
+  - `<?= session('caisse')['libelle'] ?? 'Aucune caisse' ?>`
+
+---
+
+## ✅ Travaux à faire 3 — Page de saisie des achats (60 + 45 min)
+
+### 3.1 Étape 1 – Formulaire de saisie (60 min)
+- [ ] Créer le contrôleur `app/Controllers/AchatController.php`
+  - Méthode `index()` → affiche le formulaire + liste des lignes
+  - Méthode `ajouterLigne()` → traite le POST, insère une ligne
+- [ ] Créer le modèle `app/Models/ProduitModel.php`
+  - Méthode `getAll()` → liste tous les produits
+  - Méthode `getById($id)` → retourne un produit par son id
+- [ ] Créer le modèle `app/Models/AchatModel.php`
+  - Méthode `getAchatEnCours($caisse_id)` → retourne l'achat en cours ou en crée un
+  - Méthode `ajouterLigne($achat_id, $produit_id, $quantite)` → insère dans `achat_ligne`
+- [ ] Créer la vue `app/Views/achat/index.php`
+  - Formulaire avec :
+    - `<select>` Produit (chargé depuis `produit`)
+    - `<input>` Quantité
+    - Bouton "Valider"
+
+### 3.2 Étape 2 – Tableau des lignes (45 min)
+- [ ] Dans `AchatModel` : méthode `getLignes($achat_id)` → retourne toutes les lignes avec JOIN produit
+  ```sql
+  SELECT p.designation, al.prix_unitaire, al.quantite, al.montant
+  FROM achat_ligne al
+  JOIN produit p ON p.id = al.produit_id
+  WHERE al.achat_id = ?
+  ```
+- [ ] Dans la vue `achat/index.php`, afficher le tableau :
+
+  | Produit | Prix Unit | Qté | Montant |
+  |---------|-----------|-----|---------|
+  | ...     | ...       | ... | ...     |
+  | **Total** |         |     | **xxx** |
+
+- [ ] Calculer et afficher le total (somme des montants)
+- [ ] Déclarer les routes :
+  ```php
+  $routes->get('/achat', 'AchatController::index');
+  $routes->post('/achat/ajouter', 'AchatController::ajouterLigne');
+  ```
+
+---
+
+## ✅ Travaux à faire 4 — Login + Clôture (bonus)
+
+### 4.1 Écran de login
+- [ ] Créer le contrôleur `app/Controllers/AuthController.php`
+  - Méthode `login()` → affiche le formulaire
+  - Méthode `doLogin()` → vérifie les identifiants
+  - Méthode `logout()` → détruit la session
+- [ ] Créer le modèle `app/Models/UtilisateurModel.php`
+  - Méthode `verifier($login, $password)` → retourne l'utilisateur ou false
+- [ ] Créer la vue `app/Views/auth/login.php`
+  - Champs login + password
+  - Bouton "Se connecter"
+  - Message d'erreur si identifiants incorrects
+- [ ] Créer un filtre `app/Filters/AuthFilter.php` pour protéger les routes
+  ```php
+  // Redirige vers /login si pas de session utilisateur
+  ```
+- [ ] Déclarer les routes et appliquer le filtre :
+  ```php
+  $routes->get('/login', 'AuthController::login');
+  $routes->post('/login', 'AuthController::doLogin');
+  $routes->get('/logout', 'AuthController::logout');
+  ```
+
+### 4.2 Bouton "Clôturer achat"
+- [ ] Dans `AchatController` : méthode `cloturer()`
+  - Passer le statut de l'achat à `'cloture'`
+  - Rediriger vers la page des achats (un nouvel achat sera créé automatiquement)
+- [ ] Ajouter le bouton dans la vue `achat/index.php`
+  ```html
+  <a href="/achat/cloturer" class="btn">Clôturer achat</a>
+  ```
+- [ ] Dans `AchatModel::getAchatEnCours()` : si aucun achat `en_cours` n'existe, en créer un nouveau automatiquement
+- [ ] Déclarer la route :
+  ```php
+  $routes->get('/achat/cloturer', 'AchatController::cloturer');
+  ```
+
+---
+
+## 📁 Structure des fichiers attendue
+
+```
+app/
+├── Config/
+│   ├── Database.php       ← config SQLite
+│   ├── Routes.php         ← toutes les routes
+│   └── Filters.php        ← enregistrer AuthFilter
+├── Controllers/
+│   ├── AuthController.php
+│   ├── CaisseController.php
+│   └── AchatController.php
+├── Filters/
+│   └── AuthFilter.php
+├── Models/
+│   ├── UtilisateurModel.php
+│   ├── CaisseModel.php
+│   ├── ProduitModel.php
+│   └── AchatModel.php
+└── Views/
+    ├── layout/
+    │   └── base.php
+    ├── auth/
+    │   └── login.php
+    ├── caisse/
+    │   └── choisir.php
+    └── achat/
+        └── index.php
+
+public/
+└── css/
+    └── style.css
+
+writable/
+└── database/
+    └── supermarche.db
+```
+
+---
+
+## 🔁 Ordre d'implémentation recommandé
+
+1. BDD + données initiales
+2. Config CodeIgniter (SQLite)
+3. Template de base
+4. Login (AuthController + filtre)
+5. Choix de caisse (session)
+6. Formulaire ajout produit
+7. Tableau des lignes + total
+8. Clôture d'achat
